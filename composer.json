@@ -35,11 +35,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Cache\\Bridge\\SimpleCache\\": ""
-        },
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
+            "Cache\\Bridge\\SimpleCache\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cache\\Bridge\\SimpleCache\\Tests\\": "tests"
+        }
     },
     "extra": {
         "branch-alias": {
