@@ -137,7 +137,7 @@ class SimpleCacheBridge implements CacheInterface
     /**
      * {@inheritdoc}
      */
-    public function setMultiple(iterable $values, null|int|\DateInterval $ttl = null)
+    public function setMultiple(iterable $values, null|int|\DateInterval $ttl = null): bool
     {
         if (!is_array($values)) {
             if (!$values instanceof \Traversable) {
@@ -191,7 +191,7 @@ class SimpleCacheBridge implements CacheInterface
     /**
      * {@inheritdoc}
      */
-    public function deleteMultiple($keys)
+    public function deleteMultiple(iterable $keys): bool
     {
         if (!is_array($keys)) {
             if (!$keys instanceof \Traversable) {
@@ -213,7 +213,7 @@ class SimpleCacheBridge implements CacheInterface
     /**
      * {@inheritdoc}
      */
-    public function has($key)
+    public function has(string $key): bool
     {
         try {
             return $this->cacheItemPool->hasItem($key);
