@@ -122,7 +122,7 @@ class SimpleCacheBridge implements CacheInterface
      *
      * @return \Generator
      */
-    private function generateValues($default, $items)
+    private function generateValues(mixed $default, $items)
     {
         foreach ($items as $key => $item) {
             /** @type $item CacheItemInterface */
@@ -137,7 +137,7 @@ class SimpleCacheBridge implements CacheInterface
     /**
      * {@inheritdoc}
      */
-    public function setMultiple($values, $ttl = null)
+    public function setMultiple(iterable $values, null|int|\DateInterval $ttl = null)
     {
         if (!is_array($values)) {
             if (!$values instanceof \Traversable) {
